@@ -7,7 +7,7 @@ const { seedAdmin } = require("./controllers/authController");
 const app = express();
 
 app.use(cors({
-  origin: ["https://anjani-rooms.vercel.app", "http://localhost:5173", "http://localhost:5174", "http://localhost:5175"],
+  origin: ["https://anjani-rooms.vercel.app","https://anjani-backend.vercel.app", "http://localhost:5173", "http://localhost:5174", "http://localhost:5175"],
   credentials: true,
 }));
 app.use(express.json());
