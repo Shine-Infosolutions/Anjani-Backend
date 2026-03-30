@@ -16,6 +16,8 @@ app.use(express.json());
 app.use("/api/auth", require("./routes/auth"));
 app.use("/api/rooms", require("./routes/rooms"));
 app.use("/api/categories", require("./routes/categories"));
+app.use("/api/gallery", require("./routes/gallery"));
+app.use("/api/profile-image", require("./routes/profileImage"));
 
 app.get("/", (req, res) => res.json({ message: "Anjani Rooms API running 🏨" }));
 

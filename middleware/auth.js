@@ -2,7 +2,7 @@ const jwt = require("jsonwebtoken");
 const Admin = require("../models/Admin");
 const { isBlacklisted } = require("../controllers/authController");
 
-module.exports = async (req, res, next) => {
+const protect = async (req, res, next) => {
   const auth = req.headers.authorization;
   if (!auth || !auth.startsWith("Bearer "))
     return res.status(401).json({ message: "No token provided" });
@@ -22,3 +22,6 @@ module.exports = async (req, res, next) => {
     res.status(401).json({ message: msg });
   }
 };
+
+module.exports = protect;
+module.exports.protect = protect;
